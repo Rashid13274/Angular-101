@@ -1,0 +1,99 @@
+<!-- ### PROPERTY BINDING 
+  
+  <h2>Welecome {{name}} </h2>
+  
+  <input  [id] = "myId" type="text" value="md rashid">
+  <input bind-disabled = "isDisabled" id = "{{myId}}" type="text" value="md">
+-->
+
+<!-- ### Class Binding. 
+  
+<h2 class="text-success">hello world md rashid </h2>
+<h2 [class]="successClass">hello world md rashid !!</h2>
+<h2 [class.text-special] = "isTrue"> welcome md rashid !!</h2>
+<h2 [ngClass]="objectOfClass"> welcome guys !</h2>
+--> 
+
+<!-- ### Style Binding.
+  
+<h2 [style.color]="isDisabled ? 'green': 'red' "> is Disabled true</h2>
+<h2 [style.color]="highlightColor"> orange fruit</h2>
+<h2 [ngStyle]="titleStyle">given data are  coming from ngStyle</h2>
+-->
+
+
+  <!-- ### Binding -->
+  <!-- <h2>welcome {{name}} </h2>
+  <button (click)="onClick($event)"> Greeting One</button>
+  <button (click)="greeting = 'welcome md rashid'">Greeting two</button>
+  
+  <p> {{greeting}}</p> -->
+
+
+<!-- ### TEMPLATE REFERENCE Varriable
+  <h2>welcome {{name}} </h2>
+  <input #myInput  value="random things ..." type="text">
+  <button (click)="logMessage(myInput)">LOG</button>
+-->
+
+ ### TWO WAY BINDING
+<input [(ngModel)] = "userName" type="text">
+<p> {{userName}} </p>
+
+
+<!--  ### ngSwitch Directive
+
+<div [ngSwitch]="color">
+  <div *ngSwitchCase="'red'"> <h5 [style.color]="'green'">you have picked red color !</h5></div>
+  <div *ngSwitchCase="'green'"> <h5 [style.color]="'green'">you have picked red color !</h5></div>
+  <div *ngSwitchCase="'yellow'"> <h5 [style.color]="'green'">you have picked red color !</h5></div>
+
+</div>
+-->
+
+<!-- ### ngFor Directive 
+<div>
+  <h2> welcome {{name}}</h2>
+  <div><span *ngFor="let ar of arr" [style.color] = "'green'"> {{ar}} </span> </div>
+</div>
+
+-->
+
+<!-- ### ngIf Directive 
+<div>
+  <h5 *ngIf="arr.length > 0" [style.color] = "'green'">condition is true  for if directive.</h5>
+</div>
+
+<div>
+  <h4>NgIf</h4>
+<ul *ngFor="let person of people">
+  <li *ngIf="person.age < 30">
+    {{ person.name }} ({{ person.age }})
+  </li>
+</ul>
+</div>
+
+-->
+
+<!-- Parent Components: -->
+<!-- <h2> {{message}} </h2> -->
+
+
+
+<!-- <app-employee-list></app-employee-list>
+<app-employee-details></app-employee-details>
+<app-department-list (childEvent)="message = $event" [parentData] = "name"></app-department-list> -->
+
+
+<!-- parent to child -->
+<app-department-list [parentData]="name"></app-department-list> 
+<!-- <app-department-list [newParentData] = "highlightColor"></app-department-list> -->
+
+<!-- child to parent --> -->
+<!-- <h2> {{message}} </h2> 
+<app-department-list (childEvent)="message = $event" ></app-department-list> 
+
+<!-- child to parent -->
+<h2> {{message}} </h2>
+<app-department-list (childEvent)="message = $event"></app-department-list>
+<app-employee-list></app-employee-list>
