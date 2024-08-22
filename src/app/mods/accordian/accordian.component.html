@@ -1,0 +1,30 @@
+<!-- only one item will be opened at any point of time. -->
+<div class="ui accordion styled">
+    <ng-container *ngFor="let item of items; let i = index">
+        <div
+        [ngClass]= "{active: i=== openedIndexItem}"
+        (click)="onClick(i)"
+        class="title">
+            <i class="dropdown icon"></i>
+            {{item.title}}
+        </div>
+        <div [ngClass]= "{active: i=== openedIndexItem}" class="content">
+            <p>
+                {{item.content}}
+            </p>
+        </div>
+    </ng-container>
+</div>
+
+<!-- this line means: 
+ *ngFor="let item of items; let i = index"
+for each iteration store index of items into i -->
+
+<!-- this line means: 
+[ngClass]= "{active: i=== openedIndexItem}"
+go implement class="active" if i equals to openedIndexItem, earlier we've hardcoded the active class.
+-->
+
+<!-- <ng-container> it's like invisible or hiddle element, so when this templete gets rendered
+    and items get inserted into the dob,the ng-container element is going to disappear and fall away.
+    that is exactly what we want in accordian scenario-->

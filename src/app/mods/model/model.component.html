@@ -1,0 +1,21 @@
+<div (click)="onCloseClick()" class="ui dimmer modals visible active">
+    <!-- (click)="$event.stopPropagation()" this is used to stop event bubbeling -->
+    <div (click)="$event.stopPropagation()" class="ui modal visible active">
+        <i (click)="onCloseClick()" class="close icon"></i>
+        <!-- <div class="header">
+            MODEL!
+        </div> -->
+
+    <ng-content select="[modelTitle]"></ng-content>
+        <div class="content">
+            <!-- <p>
+                Some Content for modal window should go right here!
+            </p> -->
+            <!-- reusable  -->
+            <ng-content></ng-content>
+        </div>
+        <div class="actions">
+            <button (click)="onCloseClick()"  class="ui button">OK</button>
+        </div>
+    </div>
+</div>

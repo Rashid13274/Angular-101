@@ -1,0 +1,10 @@
+<app-divider> Model Component </app-divider>
+<button (click)="onClick()">Open Model</button>
+<app-model (close)="onClick()" *ngIf="modelOpen">
+    <div modelTitle> I am REUSABLE TITLE</div>
+    <p>I am reusable model window !</p>
+</app-model>
+
+<app-divider>Accordian Component</app-divider>
+<app-accordian [items]="items"></app-accordian>
+

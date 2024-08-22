@@ -1,0 +1,37 @@
+<app-divider>
+    placeholder components
+</app-divider>
+
+
+<!-- parent to child communication , parent data can overiride child data -->
+
+<!-- <app-placeholder [header]="true"></app-placeholder> -->
+<!-- <app-placeholder [header]="false"></app-placeholder> -->
+
+<!-- parent to child communication , in this case default child data will be shown in component -->
+<app-placeholder [lines]="4"></app-placeholder>
+
+<!-- parent to child communication -->
+
+<app-divider>
+    segment components
+</app-divider>
+
+<app-segment>
+    <header>
+        <i class="pdf file outline icon"></i>
+        No documents are listed for this customer.
+</header>
+
+    <button  class="ui primary button">Add Document</button>
+</app-segment>
+
+<!-- we can create multiple segment and reuse best example given below (commented) -->
+<!-- <app-segment>
+    <header>
+        <i class="add icon"></i>
+       Add a resources
+</header>
+
+    <button  class="ui primary button">Click to add..</button>
+</app-segment> -->
